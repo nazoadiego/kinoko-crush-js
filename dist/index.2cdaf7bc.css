@@ -1,0 +1,126 @@
+:root {
+  /* Colors */
+  --kinoko-pink: violet;
+  --kinoko-purple: #573bc9;
+  --kinoko-red: #c80101;
+  --kinoko-white: white;
+  --kinoko-blue: #0084ff;
+  /* Size */
+  --kinoko-height: 60px;
+  --kinoko-width: 60px;
+}
+
+/* Defaults */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: monospace, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+/* Grid */
+
+.game-grid {
+  border-radius: 5px;
+  height: 560px;
+  width: 560px;
+  flex-wrap: wrap;
+}
+
+.game-grid div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+}
+
+/* Kinokos */
+
+.game-grid div .kinoko {
+  border-radius: 50%;
+  cursor: grab;
+  height: var(--kinoko-height);
+  width: var(--kinoko-width);
+}
+.game-grid div .kinoko:hover {
+  animation: float 0.4s infinite alternate;
+}
+
+@keyframes float {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 10%;
+  }
+}
+
+.dissapear {
+  animation: dissapear 0.4s;
+}
+
+@keyframes dissapear {
+  from {
+    height: var(--kinoko-height);
+    width: var(--kinoko-width);
+  }
+  to {
+    height: 0;
+    width: 0;
+  }
+}
+
+.appear {
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from {
+    height: 0;
+    width: 0;
+  }
+  to {
+    height: var(--kinoko-height);
+    width: var(--kinoko-width);
+  }
+}
+
+/* Utilities */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.purple-text {
+  color: #573bc9;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */
